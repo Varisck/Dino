@@ -18,8 +18,8 @@ class Cactus{
   }
 
   void show(){
-    this.index = random(2);
-    image(this.sprites[(int)index], this.x, this.y);
+    this.index = (int)random(2);
+    image(this.sprites[index], this.x, this.y);
   }
 
   void update(){

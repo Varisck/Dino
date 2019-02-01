@@ -25,27 +25,97 @@ public void setup(){
 
 
 public void draw(){
-  player.show();
+  if(player.isJumping){
+   player.counter = 0;
+    player.y -= 2;
+      if(player.y  == 205){
+        player.isFalling = true;
+        player.isJumping = false;
+      }
+  }else if(player.isFalling){
+    player.y += 2;
+    if(player.y == 275){
+      player.isFalling = false;
+    }
+  }
+  background(255,255,255);
+  player.show();  
   line(0,365,700,365);
+}
+
+public void keyPressed(){
+  if(keyCode == UP && !player.isJumping && !player.isFalling){
+      player.isJumping = true;
+    }
+}
+class Cactus{
+
+  PImage [] sprites = new PImage [3];
+  int x;
+  int y;
+  int dimX;
+  int dimY;
+  int index;
+
+  Cactus(){
+    this.x = 30;
+    this.y = 275;
+    this.dimX = 100;
+    this.dimY = 100;
+    this.sprites [0] = loadImage("Cactus1bello.png");
+    this.sprites [1] = loadImage("Cactus2bello.png");
+    this.sprites [2] = loadImage("Cactus3bello.png");
+  }
+
+  public void show(){
+    this.index = random(2);
+    image(this.sprites[(int)index], this.x, this.y);
+  }
+
+  public void update(){
+    this.x +=2;
+  }
+
 }
 class Dinosour{
 
   PImage [] sprite = new PImage [3];
-  int x = 30;
-  int y = 275;
-  int dimX =150;
-  int dimY = 100;
+  int x;
+  int y;
+  int dimX;
+  int dimY;
   int counter;
+  int count;
+  boolean isJumping = false;
+  boolean isFalling = false;
 
   Dinosour(){
+      this.x = 30;
+      this.y = 275;
+      this.dimX = 150;
+      this.dimY = 100;
       counter = 0;
+      count = 0;
       sprite[0] = loadImage("frame0.png");
       sprite[1] = loadImage("frame1.png");
       sprite[2] = loadImage("frame2.png");
   }
 
   public void show(){
-    image(sprite[0],x,y, dimX,dimY);
+  if(count >= 5){
+    count = 0;
+    if(!isJumping && !isFalling){
+      if(counter == 2){
+        counter=0;
+      }else{
+        counter++;
+      }
+    }
+  }else{
+    count++;
+  }
+
+    image(sprite[counter],x,y, dimX,dimY);
   }
 
 }
