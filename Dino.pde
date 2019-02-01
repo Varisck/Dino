@@ -1,9 +1,11 @@
 PImage img;
 Dinosour player;
+Cactus cactus;
 
 void setup(){
   size(700,700);
   player = new Dinosour();
+  cactus = new Cactus();
   img = loadImage("frame0.png");
 }
 
@@ -23,8 +25,10 @@ void draw(){
     }
   }
   background(255,255,255);
-  player.show();  
+  player.show();
+  cactus.show();
   line(0,365,700,365);
+  cactus.update();
 }
 
 void keyPressed(){
