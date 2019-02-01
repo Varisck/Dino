@@ -1,16 +1,20 @@
 class Dinosour{
 
   PImage [] sprite = new PImage [3];
-  int x = 30;
-  int y = 275;
-  int dimX =150;
-  int dimY = 100;
+  int x;
+  int y;
+  int dimX;
+  int dimY;
   int counter;
   int count;
   boolean isJumping = false;
   boolean isFalling = false;
 
   Dinosour(){
+      this.x = 30;
+      this.y = 275;
+      this.dimX = 150;
+      this.dimY = 100;
       counter = 0;
       count = 0;
       sprite[0] = loadImage("frame0.png");
