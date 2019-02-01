@@ -11,7 +11,6 @@ class Dinosour{
   boolean isFalling = false;
 
   Dinosour(){
-      //Ciao
       counter = 0;
       count = 0;
       sprite[0] = loadImage("frame0.png");
