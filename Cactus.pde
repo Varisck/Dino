@@ -17,7 +17,7 @@ class Cactus{
     }else{
       this.y = 275;
     }
-    this.dimX = 100;
+    this.dimX = 50;
     this.dimY = 100;
     //this.sprites [0] = loadImage("Cactus1bello.png");
     this.sprites [0] = loadImage("Cactus.png");
@@ -26,7 +26,7 @@ class Cactus{
   }
 
   void show(){
-    image(this.sprites[0], this.x, this.y);
+    image(this.sprites[0], this.x, this.y, this.dimX, this.dimY);
   }
 
   void update(){
