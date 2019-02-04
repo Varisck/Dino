@@ -11,14 +11,14 @@ class Cactus{
     this.index = /*(int)random(2)*/ 0;
     this.x = 250;
     if(this.index == 2){
-      this.y = 310;
+      this.y = 350;
     }else if(this.index == 0){
-      this.y = 270;
+      this.y = 310;
     }else{
-      this.y = 275;
+      this.y = 315;
     }
-    this.dimX = 50;
-    this.dimY = 100;
+    this.dimX = 40;
+    this.dimY = 60;
     //this.sprites [0] = loadImage("Cactus1bello.png");
     this.sprites [0] = loadImage("Cactus.png");
     this.sprites [1] = loadImage("Cactus2bello.png");
