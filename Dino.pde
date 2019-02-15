@@ -31,6 +31,7 @@ void draw(){
   background(255,255,255);
   player.show();
   AllCactusUpdate();
+  checkForCollision();
   line(0,365,700,365);
   delateCactus();
 }
@@ -59,7 +60,11 @@ void addCactus(){
 }
 
 void checkForCollision(){
-  
+  for(Cactus c : cactus){
+    if(player.dimX/2 + c.dimX/2 > player.x - c.x && player.y + player.dimY < c.y + c.dimY){
+      noLoop();
+    }
+  }
 }
 
 void keyPressed(){
