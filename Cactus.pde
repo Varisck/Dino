@@ -8,7 +8,7 @@ class Cactus{
   int index;
 
   Cactus(){
-    this.index = /*(int)random(2)*/ 0;
+    this.index = (int)random(2);
     this.x = 250;
     if(this.index == 2){
       this.y = 350;
